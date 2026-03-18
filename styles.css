@@ -25,7 +25,7 @@ header{
 form{
     display: flex;
     background: transparent;
-    backdrop-filter: bl;
+    backdrop-filter: blur(12px);
     flex-direction: column;
     flex-wrap: wrap;
     border: 1px solid rgb(0, 255, 255);
