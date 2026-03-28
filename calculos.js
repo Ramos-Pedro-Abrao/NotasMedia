@@ -19,6 +19,8 @@ document.getElementById('disciplinaArea').innerHTML += `
         <p class="nota">2ª nota: ${not2}</p>
         <p class="nota">3ª nota: ${not3}</p>
         <h3 class="media">Média: ${calculoDaMedia(not1, not2, not3)}</h3>
+        <button class="deleteBtn" onclick="this.parentElement.remove()">Excluir</button>
+        
     </div>
 `;
 }
