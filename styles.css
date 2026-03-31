@@ -9,6 +9,8 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 header{
     background: transparent;
@@ -29,8 +31,8 @@ form{
     flex-direction: column;
     flex-wrap: wrap;
     border: 1px solid rgb(0, 255, 255);
-    width: 500px;
-    height: 500px;
+    width: min(90%, 500px);
+    min-height: auto;
     border-radius: 12px;
     align-items: center;
     justify-content: center;
@@ -109,7 +111,7 @@ button{
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 12px;
     padding: 14px;
-    flex: 0 1 240px;
+    flex: 1 1 clamp(200px, 100%, 240px);
     color: rgb(255, 250, 250);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
 }
@@ -124,4 +126,130 @@ button{
 .disciplinaBox p{
     margin: 4px 0;
     line-height: 1.2;
+}
+
+/* Media Queries - Responsividade */
+@media (max-width: 768px) {
+    header {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    form {
+        width: 90%;
+        padding: 20px;
+        margin: 16px auto;
+        gap: 16px;
+    }
+
+    form h1 {
+        font-size: 1.5em;
+    }
+
+    div.input_area {
+        width: 95%;
+    }
+
+    button {
+        font-size: 0.95em;
+        height: 45px;
+    }
+
+    .notas_e_medias {
+        width: 95%;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .disciplinaBox {
+        flex: 1 1 clamp(160px, 100%, 200px);
+        padding: 12px;
+    }
+
+    .disciplinaBox h2 {
+        font-size: 1.1em;
+    }
+
+    .disciplinaBox h3 {
+        font-size: 1em;
+    }
+
+    .disciplinaBox p {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    * {
+        font-size: 14px;
+    }
+
+    header {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgb(0, 255, 255);
+    }
+
+    header h1 {
+        font-size: 1.3em;
+    }
+
+    form {
+        width: 95%;
+        padding: 16px;
+        margin: 12px auto;
+        gap: 12px;
+    }
+
+    form h1 {
+        font-size: 1.3em;
+    }
+
+    div.input_area {
+        width: 100%;
+        height: 45px;
+    }
+
+    div.input_area input {
+        font-size: 0.9em;
+    }
+
+    div.input_area label {
+        font-size: 0.85em;
+    }
+
+    button {
+        width: 100%;
+        font-size: 0.9em;
+        height: 40px;
+    }
+
+    .notas_e_medias {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .disciplinaBox {
+        width: 100%;
+        flex: 1 1 100%;
+        padding: 10px;
+    }
+
+    .disciplinaBox h2 {
+        font-size: 1em;
+    }
+
+    .disciplinaBox h3 {
+        font-size: 0.95em;
+    }
+
+    .disciplinaBox p {
+        font-size: 0.85em;
+    }
 }
